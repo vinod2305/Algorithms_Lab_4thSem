@@ -10,7 +10,7 @@ public class breadthFirstSearch
         static Queue<Integer> queue= new LinkedList<>();
         static node g[]=new node[20];
         static int n;
-        static Scanner sc=new Scanner(System.in);
+        static Scanner in=new Scanner(System.in);
         static void insert(int vi,int vj)
         {
                 node temp,trav;
@@ -31,25 +31,26 @@ public class breadthFirstSearch
         {
                 int i,vi,vj,n;
                 System.out.println(" Enter number of vertices: ");
-                n=sc.nextInt();
+                n=in.nextInt();
                 for(i=0;i<n;i++)
                 {
                         g[i]=null;
                 }
                 System.out.println(" Enter Number of edges: ");
-                n=sc.nextInt();
+                n=in.nextInt();
                 for(i=0;i<n;i++)
                 {
                         System.out.println(" Enter an edge(a,b): ");
-                        vi=sc.nextInt();
-                        vj=sc.nextInt();
+                        vi=in.nextInt();
+                        vj=in.nextInt();
                         insert(vi,vj);
                 }
         }
         static void bfs(int v)
         {
                 node t;
-                System.out.println("Source vertex"+String.valueOf(v)+"\t");
+                System.out.println("Source vertex: "+String.valueOf(v)+"\t");
+                System.out.println("Nodes visited in BFS order are: ");
                 visited[v]=1;
                 queue.add(v);
                 while(!queue.isEmpty()){
@@ -73,8 +74,9 @@ public class breadthFirstSearch
                         visited[i]=0;
                 }
                 creategraph();
-                System.out.println("Nodes visited in BFS order are: ");
-                bfs(1);
+                System.out.println("Enter source vertex: ");
+                int source=in.nextInt();
+                bfs(source);
                 System.out.println();
         }
 
