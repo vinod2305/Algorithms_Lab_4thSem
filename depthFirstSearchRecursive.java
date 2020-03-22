@@ -7,7 +7,6 @@ class node
 public class depthFirstSearchRecursive
 {
         static int visited[]=new int[20];
-        static Queue<Integer> queue= new LinkedList<>();
         static node g[]=new node[20];
         static int n;
         static Scanner in=new Scanner(System.in);
